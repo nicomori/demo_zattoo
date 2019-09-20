@@ -124,7 +124,7 @@ public class Stepdefs {
 		// "com.wggesucht.android.WG_Gesucht");
 		// cap.setCapability(MobileCapabilityType.PLATFORM_VERSION, "7");
 		cap.setCapability(MobileCapabilityType.PLATFORM_NAME, "ANDROID");
-		cap.setCapability(MobileCapabilityType.APP, "nig.apk");
+		cap.setCapability(MobileCapabilityType.APP, System.getProperty("user.dir")+"/nig.apk");
 
 		//
 //		cap.setCapability("noReset", true);
