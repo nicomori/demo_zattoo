@@ -1,5 +1,5 @@
-/Users/nicolasmori/Documents/github/zattoo_example/src/test/java/zattoo_example/Stepdefs.java
-/Users/nicolasmori/Documents/github/zattoo_example/src/test/java/zattoo/example/pages/DashboardPanel.java
-/Users/nicolasmori/Documents/github/zattoo_example/src/test/java/zattoo/example/pages/LoginPage.java
-/Users/nicolasmori/Documents/github/zattoo_example/src/test/java/zattoo/example/pages/SubsectionMovies.java
-/Users/nicolasmori/Documents/github/zattoo_example/src/test/java/zattoo_example/RunCucumberTest.java
+/Users/nicolasmori/Documents/github/demo_zattoo/src/test/java/zattoo/example/pages/DashboardPanel.java
+/Users/nicolasmori/Documents/github/demo_zattoo/src/test/java/zattoo/example/pages/SubsectionMovies.java
+/Users/nicolasmori/Documents/github/demo_zattoo/src/test/java/zattoo_example/RunCucumberTest.java
+/Users/nicolasmori/Documents/github/demo_zattoo/src/test/java/zattoo/example/pages/LoginPage.java
+/Users/nicolasmori/Documents/github/demo_zattoo/src/test/java/zattoo_example/Stepdefs.java

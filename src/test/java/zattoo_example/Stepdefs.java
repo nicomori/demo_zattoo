@@ -1,26 +1,33 @@
 package zattoo_example;
 
 import java.lang.invoke.MethodHandles;
+import java.net.URL;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
+import org.openqa.selenium.By;
+import org.openqa.selenium.By.ById;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.remote.MobileCapabilityType;
 import zattoo.example.pages.DashboardPanel;
 import zattoo.example.pages.LoginPage;
 import zattoo.example.pages.SubsectionMovies;
 
 public class Stepdefs {
-	
+
 	WebDriver driver;
 
 	private static final String WIN_DRIVER_PATH = "src/test/resources/drivers/win/chromedriver.exe";
@@ -70,21 +77,19 @@ public class Stepdefs {
 		logger.info("access to the url: " + url);
 		driver.get(url);
 	}
-	
+
 	@Then("make the login to access with this user {string} and this password {string}")
 	public void make_the_login_to_access_with_this_user_and_this_password(String username, String password) {
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.makeLoginIntoTheApp(username, password);
-		
-		
+
 	}
-	
+
 	@Then("make click in the sub menu movies")
 	public void make_click_in_the_sub_menu_movies() {
-		DashboardPanel dashboardPanel = new DashboardPanel(driver); 
+		DashboardPanel dashboardPanel = new DashboardPanel(driver);
 		dashboardPanel.accessToTheSubmenuMovies();
-		
-		
+
 	}
 
 	@Then("make click in the options of the first movie")
@@ -96,10 +101,168 @@ public class Stepdefs {
 	@Then("make click in the option to record the movie and verify the popup")
 	public void make_click_in_the_option_to_record_the_movie_and_verify_the_popup() {
 		SubsectionMovies subsectionMovies = new SubsectionMovies(driver);
-		
+
 		logger.info(subsectionMovies.selectTheOptionMenuRecordAndReturnTheTextOfTheMessage());
 	}
 	
+	@Then("make this happen")
+	public void make_this_happen() {
+		
+		
+		System.out.println("1111111111111111111111aaaaaa");
+		
+		String packageApp = "com.sbc.wambotv.mobiletv.beta";
+
+//		SubsectionMovies subsectionMovies = new SubsectionMovies(driver);
+//		
+//		logger.info(subsectionMovies.selectTheOptionMenuRecordAndReturnTheTextOfTheMessage());
+
+		DesiredCapabilities cap = new DesiredCapabilities();
+		// cap.setCapability(MobileCapabilityType.DEVICE_NAME, uuid);
+		cap.setCapability(MobileCapabilityType.APP_PACKAGE, packageApp);
+		// cap.setCapability(MobileCapabilityType.APP_ACTIVITY,
+		// "com.wggesucht.android.WG_Gesucht");
+		// cap.setCapability(MobileCapabilityType.PLATFORM_VERSION, "7");
+		cap.setCapability(MobileCapabilityType.PLATFORM_NAME, "ANDROID");
+		cap.setCapability(MobileCapabilityType.APP, "/Users/nicolasmori/Documents/nig.apk");
+
+		//
+//		cap.setCapability("noReset", true);
+		cap.setCapability("deviceName", "25cbb130000d7ece");
+		// cap.setCapability("fullReset", true);
+		// cap.setCapability("fastReset", true);
+		cap.setCapability("appActivity", "com.zattoo.mobile.MobileActivity");
+
+		AndroidDriver driver1 = null;
+		
+		try {
+			 driver1 = new AndroidDriver<WebElement>(new URL("http://127.0.0.1:4723/wd/hub"), cap);
+		} catch (Exception e) {
+			System.out.println("Exception at the moment to generate the driver = " + e);
+		}
+		
+		System.out.println("111111111111111111111bbbbbbb");
+		
+		try {
+			Thread.sleep(5555);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+
+//		buttonLogin
+//		id
+		
+		
+		driver1.findElementByXPath("//android.widget.TextView").click();
+		
+		
+		
+		
+		
+//		driver1.findElement(By.id("com.sbc.wambotv.mobiletv.beta:id/onboarding_login_textview")).click();
+		
+		try {
+			Thread.sleep(3000);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+
+//		LoginPage
+
+//		editFieldEmail
+//		id
+//		com.sbc.wambotv.mobiletv.beta:id/login_email
+
+		driver1.findElementByXPath("//*[contains(@resource-id,'login_email')]").sendKeys("zattoo1");
+
+//		editFieldPass
+//		id
+//		com.sbc.wambotv.mobiletv.beta:id/login_password
+
+		driver1.findElementByXPath("//*[contains(@resource-id,'login_password')]").sendKeys("zattoo1234");
+
+//		buttonLogin
+//		id
+//		com.sbc.wambotv.mobiletv.beta:id/login_button
+
+		driver1.findElementByXPath("//*[contains(@resource-id,'login_button')]").click();
+
+		
+		System.out.println("222222222222222222");
+		
+		try {
+			Thread.sleep(3000);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+
+		// WelcomeAfterLoginPage
+		//
+		// buttonNext
+		// id
+		// com.sbc.wambotv.mobiletv.beta:id/okButton
+
+		driver1.findElementByXPath("//*[contains(@resource-id,'okButton')]").click();
+		//
+		//
+
+		try {
+			Thread.sleep(3000);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+
+		// buttonGotIt
+		// id
+		// com.sbc.wambotv.mobiletv.beta:id/okButton
+
+		driver1.findElementByXPath("//*[contains(@resource-id,'okButton')]").click();
+
+		
+		System.out.println("3333333333333333");
+		try {
+			Thread.sleep(3000);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+
+		// BurgerMenuPage
+		//
+		// optionMenuHighlights
+		// xpath
+		// (//androidx.appcompat.widget.LinearLayoutCompat[1])[1]
+
+		driver1.findElementByXPath("(//androidx.appcompat.widget.LinearLayoutCompat[1])[1]").click();
+		
+		
+		
+
+		try {
+			Thread.sleep(3000);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+		System.out.println("44444444444444444444");
+
+		// HighlightsPage
+		//
+		// titleSports
+		// xpath
+		//
+		// (//*[@resource-id='com.sbc.wambotv.mobiletv.beta:id/carrouselHeaderTextView'])[1]
+
+		driver1.findElementByXPath("(//*[@resource-id='com.sbc.wambotv.mobiletv.beta:id/carrouselHeaderTextView'])[1]")
+				.click();
+		
+		System.out.println("FFFFFFFFFFFFFFFF");
+
+//	homePageNativeWG = new HomePage(driver);
+//	toolBar = new ToolBar(driver);
+//	loginPage = new LoginPage(driver);
+//	homePage = new HomePage(driver);
+	}
+
 	@Before
 	public void setupBefore() {
 		Properties log4jProp = new Properties();
@@ -111,6 +274,6 @@ public class Stepdefs {
 	@After
 	public void afterMethod() {
 		logger.info("Test completed starting closing the driver.");
-		driver.close();
+//		driver.close();
 	}
 }
