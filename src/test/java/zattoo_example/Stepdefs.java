@@ -124,7 +124,7 @@ public class Stepdefs {
 		// "com.wggesucht.android.WG_Gesucht");
 		// cap.setCapability(MobileCapabilityType.PLATFORM_VERSION, "7");
 		cap.setCapability(MobileCapabilityType.PLATFORM_NAME, "ANDROID");
-		cap.setCapability(MobileCapabilityType.APP, "/Users/nicolasmori/Documents/nig.apk");
+		cap.setCapability(MobileCapabilityType.APP, "nig.apk");
 
 		//
 //		cap.setCapability("noReset", true);
@@ -156,11 +156,6 @@ public class Stepdefs {
 		driver1.findElementByXPath("//android.widget.TextView").click();
 		
 		
-		
-		
-		
-//		driver1.findElement(By.id("com.sbc.wambotv.mobiletv.beta:id/onboarding_login_textview")).click();
-		
 		try {
 			Thread.sleep(3000);
 		} catch (Exception e) {
@@ -170,21 +165,12 @@ public class Stepdefs {
 //		LoginPage
 
 //		editFieldEmail
-//		id
-//		com.sbc.wambotv.mobiletv.beta:id/login_email
-
 		driver1.findElementByXPath("//*[contains(@resource-id,'login_email')]").sendKeys("zattoo1");
 
 //		editFieldPass
-//		id
-//		com.sbc.wambotv.mobiletv.beta:id/login_password
-
 		driver1.findElementByXPath("//*[contains(@resource-id,'login_password')]").sendKeys("zattoo1234");
 
 //		buttonLogin
-//		id
-//		com.sbc.wambotv.mobiletv.beta:id/login_button
-
 		driver1.findElementByXPath("//*[contains(@resource-id,'login_button')]").click();
 
 		
@@ -199,9 +185,6 @@ public class Stepdefs {
 		// WelcomeAfterLoginPage
 		//
 		// buttonNext
-		// id
-		// com.sbc.wambotv.mobiletv.beta:id/okButton
-
 		driver1.findElementByXPath("//*[contains(@resource-id,'okButton')]").click();
 		//
 		//
@@ -214,8 +197,6 @@ public class Stepdefs {
 
 		// buttonGotIt
 		// id
-		// com.sbc.wambotv.mobiletv.beta:id/okButton
-
 		driver1.findElementByXPath("//*[contains(@resource-id,'okButton')]").click();
 
 		
@@ -230,8 +211,6 @@ public class Stepdefs {
 		//
 		// optionMenuHighlights
 		// xpath
-		// (//androidx.appcompat.widget.LinearLayoutCompat[1])[1]
-
 		driver1.findElementByXPath("(//androidx.appcompat.widget.LinearLayoutCompat[1])[1]").click();
 		
 		
@@ -248,19 +227,10 @@ public class Stepdefs {
 		// HighlightsPage
 		//
 		// titleSports
-		// xpath
-		//
-		// (//*[@resource-id='com.sbc.wambotv.mobiletv.beta:id/carrouselHeaderTextView'])[1]
-
 		driver1.findElementByXPath("(//*[@resource-id='com.sbc.wambotv.mobiletv.beta:id/carrouselHeaderTextView'])[1]")
 				.click();
 		
 		System.out.println("FFFFFFFFFFFFFFFF");
-
-//	homePageNativeWG = new HomePage(driver);
-//	toolBar = new ToolBar(driver);
-//	loginPage = new LoginPage(driver);
-//	homePage = new HomePage(driver);
 	}
 
 	@Before
