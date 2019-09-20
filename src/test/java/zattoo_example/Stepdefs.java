@@ -165,7 +165,7 @@ public class Stepdefs {
 //		LoginPage
 
 //		editFieldEmail
-		driver1.findElementByXPath("//*[contains(@resource-id,'login_email')]").sendKeys("zattoo1");
+		driver1.findElementByXPath("//*[contains(@resource-id,'login_email')]").sendKeys("zattoo2");
 
 //		editFieldPass
 		driver1.findElementByXPath("//*[contains(@resource-id,'login_password')]").sendKeys("zattoo1234");
